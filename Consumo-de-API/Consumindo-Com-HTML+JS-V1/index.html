@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Consumo de API - Usuários</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; max-width: 760px; margin: 32px auto; padding: 0 16px; }
+            h1 { margin-bottom: 8px; }
+            .status { margin: 8px 0 16px; }
+            ul { padding-left: 18; }
+            li { margin: 6px 0; }
+            .erro { color: #b00020; }
+        </style>
+    </head>
+    <body>
+        <h1>LIsta de Usuários</h1>
+        <div id="status" class="status">Carregando usuários...</div>
+        <ul id="usuarios"></ul>
+
+        <!-- carrega nosso JS no final para garantir que o HTML já existe -->
+         <script src="./script.js" defer></script>
+    </body>
+</html>

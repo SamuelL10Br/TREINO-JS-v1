@@ -1,41 +1,28 @@
-// Operação síncrona
-console.log("Início");
-console.log("Meio");
-console.log("Fim")
-
-// Operação assíncrona
-console.log("Início");
-
+console.log("Carregando...")
 setTimeout(() => {
-    console.log("Demorou 2 segundos");
-}, 2000);
+    console.log("Pronto!")
+},3000);
 
-console.log("Fim");
-
-//Uso de promesas
-let promessa = new Promise((resolve, reject) => {
-    let sucesso = true;
-
-    if(sucesso) {
-        resolve("Deu certo!");
+let pedidos = new Promise((resolve, reject) => {
+    let pronto = true;
+    if(pronto){
+        resolve("Seu pedido chegou!");
     } else {
-        reject("Deu errado!");
+        reject("Ocorreu um atraso");
     }
 });
-promessa
+pedidos
 .then(resultado => console.log(resultado))
-.catch(erro => console.error(erro));
+.catch(erro => console.log(erro));
 
-//Com async/await que é um jeito mais simples de trabalhar com promises
-function esperar(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function esperarSegundos(ms) {
+    return new Promise(resolve => setTimeout(resolve,ms));
 }
 
-async function executar() {
-    console.log("Início");
-    await esperar(2000); // espera 2 segundos
-    console.log("Depois de 2 segundos");
+async function segundos() {
+    console.log("Contando o tempo x segundos...");
+    await esperarSegundos(3000);
+    console.log("Passaram 3 segundos!");
     console.log("Fim");
 }
-
-executar();
+segundos();
